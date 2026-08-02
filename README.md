@@ -17,3 +17,16 @@ The lab demonstrates centralized log collection, endpoint monitoring, and File I
 - Monitor file creation, modification, and deletion events
 - Visualize security alerts in the Wazuh Dashboard
 - Understand the architecture and workflow of a SIEM solution
+
+  ---
+
+## 🚀 Project Features
+
+- ✅ Centralized log collection from Windows endpoint
+- ✅ Windows Event Log monitoring
+- ✅ File Integrity Monitoring (FIM) using Syscheck
+- ✅ Real-time detection of file creation, modification, and deletion
+- ✅ Security alerts displayed in the Wazuh Dashboard
+- ✅ Endpoint registration and management
+- ✅ SIEM architecture using Ubuntu Server and Windows Agent
+- ✅ Real-time security monitoring through a web dashboard
