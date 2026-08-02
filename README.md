@@ -95,5 +95,5 @@ The Windows endpoint sends logs and file integrity events to the Wazuh Manager o
                           │
                           ▼
               📁 Monitored Folder
-         C:\Users\shree\Test
+               C:\Users\shree\Test
                          
