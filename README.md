@@ -1,10 +1,28 @@
 # 🛡️ Wazuh SIEM Home Lab with File Integrity Monitoring (FIM)
+## 📐 Architecture Diagram
 
+![Wazuh SIEM Home Lab Architecture](images/wazuh_siem_architecture%20(1).svg)
 ## 📌 Project Overview
 
 This project demonstrates the deployment of a Wazuh SIEM environment using an Ubuntu Server as the Wazuh Manager and a Windows 10 endpoint as the Wazuh Agent.
 
 The lab demonstrates centralized log collection, endpoint monitoring, and File Integrity Monitoring (FIM). Wazuh detects file creation, modification, and deletion events in real time and displays them on the Wazuh Dashboard for security monitoring.
+
+---
+## 🛠️ Technologies Used
+
+| Component | Technology |
+|-----------|------------|
+| SIEM Platform | Wazuh 4.12 |
+| Operating System | Ubuntu Server 24.04 LTS |
+| Endpoint | Windows 10 Pro |
+| Virtualization | Oracle VirtualBox |
+| Log Collection | Wazuh Agent |
+| File Integrity Monitoring | Syscheck |
+| Search Engine | OpenSearch |
+| Dashboard | Wazuh Dashboard |
+| Network | Bridged Adapter |
+| Protocol | TCP (Port 1514) |
 
 ---
 
@@ -33,22 +51,7 @@ The lab demonstrates centralized log collection, endpoint monitoring, and File I
 
 ---
 
-## 🛠️ Technologies Used
 
-| Component | Technology |
-|-----------|------------|
-| SIEM Platform | Wazuh 4.12 |
-| Operating System | Ubuntu Server 24.04 LTS |
-| Endpoint | Windows 10 Pro |
-| Virtualization | Oracle VirtualBox |
-| Log Collection | Wazuh Agent |
-| File Integrity Monitoring | Syscheck |
-| Search Engine | OpenSearch |
-| Dashboard | Wazuh Dashboard |
-| Network | Bridged Adapter |
-| Protocol | TCP (Port 1514) |
-
----
 
 # 🏗️ Project Architecture
 
@@ -56,9 +59,7 @@ This project consists of one Ubuntu Server acting as the Wazuh Manager and one W
 
 The Windows endpoint sends logs and file integrity events to the Wazuh Manager over the local network. The manager analyzes the events, stores them in OpenSearch, and displays them through the Wazuh Dashboard.
 
-## 📐 Architecture Diagram
 
-![Wazuh SIEM Home Lab Architecture](images/wazuh_siem_architecture%20(1).svg)
 
 ### Architecture Overview
 
