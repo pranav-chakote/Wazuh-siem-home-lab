@@ -58,6 +58,12 @@ The Windows endpoint sends logs and file integrity events to the Wazuh Manager o
 
 ## 📐 Architecture Diagram
 
+![Wazuh SIEM Home Lab Architecture](images/wazuh_siem_architecture%20(1).svg)
+
+### Architecture Overview
+
+The Wazuh SIEM Home Lab consists of an Ubuntu Server running the Wazuh Manager and a Windows 10 endpoint running the Wazuh Agent. The Wazuh Agent continuously collects Windows Event Logs and File Integrity Monitoring (FIM) events using the Syscheck module. These events are securely transmitted to the Wazuh Manager over TCP port 1514, where they are analyzed using built-in detection rules. The processed events are stored in OpenSearch and visualized through the Wazuh Dashboard, allowing a SOC analyst to monitor and investigate security events in real time.
+
                 
 
 ### Architecture Explanation
