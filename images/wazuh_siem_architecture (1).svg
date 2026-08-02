@@ -1,0 +1,210 @@
+<svg viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', Arial, sans-serif">
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.15"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrowGray" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#64748b"/>
+    </marker>
+
+    <clipPath id="clipAnalyst"><rect x="50" y="100" width="580" height="64" rx="10"/></clipPath>
+    <clipPath id="clipDash"><rect x="50" y="196" width="580" height="100" rx="10"/></clipPath>
+    <clipPath id="clipOS"><rect x="50" y="326" width="580" height="90" rx="10"/></clipPath>
+    <clipPath id="clipMgr"><rect x="50" y="446" width="580" height="110" rx="10"/></clipPath>
+    <clipPath id="clipAgent"><rect x="50" y="596" width="580" height="100" rx="10"/></clipPath>
+    <clipPath id="clipFolder"><rect x="50" y="726" width="580" height="80" rx="10"/></clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="1600" height="900" fill="#ffffff"/>
+
+  <!-- Logo mark -->
+  <g transform="translate(50,18)">
+    <path d="M14,0 L28,5 L28,15 C28,23 21,29 14,32 C7,29 0,23 0,15 L0,5 Z" fill="#1e3a8a"/>
+    <path d="M8,16 L12,20 L20,10" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Title -->
+  <text x="800" y="42" text-anchor="middle" font-size="30" font-weight="700" fill="#0f172a">Wazuh SIEM Home Lab Architecture</text>
+  <text x="800" y="66" text-anchor="middle" font-size="14" fill="#64748b">Security Information and Event Management (SIEM) Architecture</text>
+  <line x1="50" y1="82" x2="1550" y2="82" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <!-- ============ LEFT COLUMN: MAIN DATA FLOW ============ -->
+
+  <!-- SOC Analyst -->
+  <rect x="50" y="100" width="580" height="64" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect clip-path="url(#clipAnalyst)" x="50" y="100" width="580" height="34" fill="#1e3a8a"/>
+  <!-- laptop icon -->
+  <g transform="translate(74,116)">
+    <rect x="0" y="0" width="26" height="17" rx="1.5" fill="#ffffff"/>
+    <rect x="2" y="2" width="22" height="12" rx="0.5" fill="#1e3a8a"/>
+    <path d="M-3,17 L29,17 L26,21 L0,21 Z" fill="#e2e8f0"/>
+  </g>
+  <text x="110" y="122" font-size="15" font-weight="700" fill="#ffffff">SOC Analyst</text>
+  <text x="70" y="151" font-size="12.5" fill="#334155">Monitors alerts, investigates incidents &amp; manages agents via web console</text>
+
+  <!-- Arrow: Analyst -> Dashboard -->
+  <line x1="340" y1="164" x2="340" y2="192" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <rect x="270" y="169" width="140" height="18" fill="#ffffff"/>
+  <text x="340" y="182" text-anchor="middle" font-size="12" font-weight="600" fill="#2563eb">HTTPS (Port 443)</text>
+
+  <!-- Wazuh Dashboard -->
+  <rect x="50" y="196" width="580" height="100" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect clip-path="url(#clipDash)" x="50" y="196" width="580" height="34" fill="#2563eb"/>
+  <g transform="translate(72,208)">
+    <rect x="0" y="0" width="24" height="18" rx="2" fill="#ffffff"/>
+    <rect x="3" y="11" width="4" height="5" fill="#2563eb"/>
+    <rect x="9" y="7" width="4" height="9" fill="#2563eb"/>
+    <rect x="15" y="4" width="4" height="12" fill="#2563eb"/>
+  </g>
+  <text x="106" y="218" font-size="15" font-weight="700" fill="#ffffff">Wazuh Dashboard</text>
+  <circle cx="76" cy="252" r="2.5" fill="#2563eb"/>
+  <text x="86" y="256" font-size="13" fill="#334155">Alert Visualization</text>
+  <circle cx="76" cy="276" r="2.5" fill="#2563eb"/>
+  <text x="86" y="280" font-size="13" fill="#334155">Agent Management</text>
+
+  <!-- Arrow: Dashboard -> OpenSearch -->
+  <line x1="340" y1="296" x2="340" y2="322" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- OpenSearch -->
+  <rect x="50" y="326" width="580" height="90" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect clip-path="url(#clipOS)" x="50" y="326" width="580" height="34" fill="#2563eb"/>
+  <g transform="translate(72,338)">
+    <ellipse cx="10" cy="3" rx="10" ry="3" fill="#ffffff"/>
+    <path d="M0,3 L0,13 A10,3 0 0 0 20,13 L20,3" fill="#ffffff" opacity="0.9"/>
+    <ellipse cx="10" cy="13" rx="10" ry="3" fill="#ffffff" opacity="0.6"/>
+  </g>
+  <text x="106" y="218" font-size="15" font-weight="700" fill="#ffffff" transform="translate(0,0)"></text>
+  <text x="106" y="348" font-size="15" font-weight="700" fill="#ffffff">OpenSearch</text>
+  <circle cx="76" cy="378" r="2.5" fill="#2563eb"/>
+  <text x="86" y="382" font-size="13" fill="#334155">Event Storage</text>
+  <circle cx="76" cy="398" r="2.5" fill="#2563eb"/>
+  <text x="86" y="402" font-size="13" fill="#334155">Search &amp; Analytics</text>
+
+  <!-- Arrow: OpenSearch -> Manager -->
+  <line x1="340" y1="416" x2="340" y2="442" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- Wazuh Manager (Ubuntu Server) -->
+  <rect x="50" y="446" width="580" height="110" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect clip-path="url(#clipMgr)" x="50" y="446" width="580" height="34" fill="#1e293b"/>
+  <g transform="translate(74,458)">
+    <rect x="0" y="0" width="22" height="6" rx="1" fill="#ffffff"/>
+    <rect x="0" y="8" width="22" height="6" rx="1" fill="#ffffff"/>
+    <circle cx="3" cy="3" r="1" fill="#1e293b"/>
+    <circle cx="3" cy="11" r="1" fill="#1e293b"/>
+  </g>
+  <text x="108" y="468" font-size="15" font-weight="700" fill="#ffffff">Wazuh Manager — Ubuntu Server</text>
+  <circle cx="76" cy="502" r="2.5" fill="#1e293b"/>
+  <text x="86" y="506" font-size="13" fill="#334155">Log Analysis</text>
+  <circle cx="76" cy="522" r="2.5" fill="#1e293b"/>
+  <text x="86" y="526" font-size="13" fill="#334155">Rule Engine</text>
+  <circle cx="76" cy="542" r="2.5" fill="#1e293b"/>
+  <text x="86" y="546" font-size="13" fill="#334155">Alert Generation</text>
+  <text x="590" y="546" font-size="11.5" fill="#94a3b8" text-anchor="end" font-style="italic">(VirtualBox VM)</text>
+
+  <!-- Double arrow: Manager <-> Agent, TCP 1514 -->
+  <line x1="340" y1="556" x2="340" y2="592" stroke="#64748b" stroke-width="2.5" marker-end="url(#arrowGray)" marker-start="url(#arrowGray)"/>
+  <rect x="250" y="558" width="180" height="32" fill="#ffffff"/>
+  <text x="340" y="570" text-anchor="middle" font-size="12" font-weight="600" fill="#64748b">TCP Port 1514</text>
+  <text x="340" y="584" text-anchor="middle" font-size="11" fill="#94a3b8">Secure Agent Communication</text>
+
+  <!-- Wazuh Agent (Windows 10) -->
+  <rect x="50" y="596" width="580" height="100" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect clip-path="url(#clipAgent)" x="50" y="596" width="580" height="34" fill="#2563eb"/>
+  <g transform="translate(74,608)">
+    <rect x="0" y="0" width="20" height="14" rx="1.5" fill="#ffffff"/>
+    <rect x="8" y="14" width="4" height="4" fill="#ffffff"/>
+    <rect x="3" y="18" width="14" height="2" rx="1" fill="#ffffff"/>
+  </g>
+  <text x="106" y="618" font-size="15" font-weight="700" fill="#ffffff">Wazuh Agent — Windows 10</text>
+  <circle cx="76" cy="652" r="2.5" fill="#2563eb"/>
+  <text x="86" y="656" font-size="13" fill="#334155">Windows Event Logs</text>
+  <circle cx="76" cy="676" r="2.5" fill="#2563eb"/>
+  <text x="86" y="680" font-size="13" fill="#334155">Syscheck (File Integrity Monitoring)</text>
+
+  <!-- Arrow: Agent -> Folder -->
+  <line x1="340" y1="696" x2="340" y2="722" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- Monitored Folder -->
+  <rect x="50" y="726" width="580" height="80" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect clip-path="url(#clipFolder)" x="50" y="726" width="580" height="34" fill="#334155"/>
+  <g transform="translate(74,737)">
+    <path d="M0,3 L8,3 L10,6 L22,6 L22,16 L0,16 Z" fill="#ffffff"/>
+  </g>
+  <text x="106" y="748" font-size="15" font-weight="700" fill="#ffffff">File Integrity Monitoring (FIM)</text>
+  <text x="70" y="776" font-size="13" font-family="Consolas, monospace" fill="#334155">C:\Users\shree\Test</text>
+  <text x="70" y="795" font-size="12.5" fill="#64748b">Real-time File Monitoring</text>
+
+  <!-- ============ RIGHT PANEL: EVENT FLOW ============ -->
+  <rect x="670" y="100" width="880" height="706" rx="12" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+  <rect x="670" y="100" width="880" height="40" rx="12" fill="#1e3a8a"/>
+  <rect x="670" y="120" width="880" height="20" fill="#1e3a8a"/>
+  <text x="1110" y="126" text-anchor="middle" font-size="17" font-weight="700" fill="#ffffff">Event Flow</text>
+
+  <!-- Event flow steps -->
+  <!-- step template repeated -->
+  <g font-size="13.5" fill="#1e293b">
+    <!-- 1 -->
+    <rect x="710" y="160" width="800" height="46" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+    <circle cx="738" cy="183" r="12" fill="#2563eb"/>
+    <text x="738" y="188" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">1</text>
+    <text x="762" y="188" font-weight="600">File Created / Modified / Deleted</text>
+    <line x1="1110" y1="206" x2="1110" y2="228" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowGray)"/>
+
+    <!-- 2 -->
+    <rect x="710" y="232" width="800" height="46" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+    <circle cx="738" cy="255" r="12" fill="#2563eb"/>
+    <text x="738" y="260" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">2</text>
+    <text x="762" y="260" font-weight="600">Syscheck detects the change</text>
+    <line x1="1110" y1="278" x2="1110" y2="300" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowGray)"/>
+
+    <!-- 3 -->
+    <rect x="710" y="304" width="800" height="46" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+    <circle cx="738" cy="327" r="12" fill="#2563eb"/>
+    <text x="738" y="332" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">3</text>
+    <text x="762" y="332" font-weight="600">Wazuh Agent collects the event</text>
+    <line x1="1110" y1="350" x2="1110" y2="372" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowGray)"/>
+
+    <!-- 4 -->
+    <rect x="710" y="376" width="800" height="46" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+    <circle cx="738" cy="399" r="12" fill="#2563eb"/>
+    <text x="738" y="404" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">4</text>
+    <text x="762" y="404" font-weight="600">Event sent via TCP 1514</text>
+    <line x1="1110" y1="422" x2="1110" y2="444" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowGray)"/>
+
+    <!-- 5 -->
+    <rect x="710" y="448" width="800" height="46" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+    <circle cx="738" cy="471" r="12" fill="#1e293b"/>
+    <text x="738" y="476" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">5</text>
+    <text x="762" y="476" font-weight="600">Wazuh Manager analyzes the event</text>
+    <line x1="1110" y1="494" x2="1110" y2="516" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowGray)"/>
+
+    <!-- 6 -->
+    <rect x="710" y="520" width="800" height="46" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+    <circle cx="738" cy="543" r="12" fill="#2563eb"/>
+    <text x="738" y="548" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">6</text>
+    <text x="762" y="548" font-weight="600">OpenSearch indexes the event</text>
+    <line x1="1110" y1="566" x2="1110" y2="588" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowGray)"/>
+
+    <!-- 7 -->
+    <rect x="710" y="592" width="800" height="46" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+    <circle cx="738" cy="615" r="12" fill="#2563eb"/>
+    <text x="738" y="620" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">7</text>
+    <text x="762" y="620" font-weight="600">Dashboard displays the alert</text>
+    <line x1="1110" y1="638" x2="1110" y2="660" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowGray)"/>
+
+    <!-- 8 -->
+    <rect x="710" y="664" width="800" height="46" rx="8" fill="#ffffff" stroke="#1e3a8a" stroke-width="1.5"/>
+    <circle cx="738" cy="687" r="12" fill="#1e3a8a"/>
+    <text x="738" y="692" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">8</text>
+    <text x="762" y="692" font-weight="700" fill="#1e3a8a">SOC Analyst investigates</text>
+  </g>
+
+  <!-- ============ BOTTOM ENVIRONMENT NOTE ============ -->
+  <rect x="50" y="826" width="1500" height="56" rx="10" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="70" y="847" font-size="12.5" font-weight="700" fill="#1e293b">Environment:</text>
+  <text x="70" y="866" font-size="12" fill="#334155">Ubuntu Server 24.04 LTS (VirtualBox)   •   Wazuh 4.12   •   Windows 10 Endpoint   •   Bridged Network   •   File Integrity Monitoring (Syscheck)</text>
+</svg>
