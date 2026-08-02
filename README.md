@@ -58,49 +58,42 @@ The Windows endpoint sends logs and file integrity events to the Wazuh Manager o
 
 ## 📐 Architecture Diagram
 
-```text
-                          +----------------------------------+
-                          |        SOC Analyst/User          |
-                          |     Accesses Wazuh Dashboard     |
-                          +----------------+-----------------+
-                                           |
-                                      HTTPS (443)
-                                           |
-                                           ▼
-+--------------------------------------------------------------------------------------+
-|                    Ubuntu Server (VirtualBox) - Wazuh Manager                        |
-|                                                                                      |
-|  +----------------+      +----------------+      +----------------+                   |
-|  | Wazuh Manager  | ---> |  Rule Engine   | ---> |   OpenSearch   |                  |
-|  | Log Collection |      | Alert Analysis |      | Event Storage  |                  |
-|  +----------------+      +----------------+      +----------------+                  |
-|                                           |                                          |
-|                                           ▼                                          |
-|                                 +--------------------+                               |
-|                                 |  Wazuh Dashboard   |                               |
-|                                 | Alert Visualization|                               |
-|                                 +--------------------+                               |
-+--------------------------------------------------------------------------------------+
-                     ▲
-                     │ TCP 1514
-                     │
-+--------------------------------------------------------------------------------------+
-|                      Windows 10 Endpoint (Host Machine)                              |
-|                                                                                      |
-|  +-------------------------+                                                         |
-|  |      Wazuh Agent        |                                                         |
-|  |-------------------------|                                                         |
-|  | • Windows Event Logs    |                                                         |
-|  | • Syscheck (FIM)        |                                                         |
-|  | • Log Collection        |                                                         |
-|  | • Event Forwarding      |                                                         |
-|  +------------+------------+                                                         |
-|               │                                                                      |
-|               ▼                                                                      |
-|  +-------------------------------+                                                   |
-|  | Monitored Folder              |                                                   |
-|  | C:\Users\shree\Test           |                                                   |
-|  +-------------------------------+                                                   |
-+--------------------------------------------------------------------------------------+
-
-```
+                    👤 SOC Analyst
+                           │
+                    HTTPS (443)
+                           │
+                           ▼
+                 ┌─────────────────┐
+                 │ Wazuh Dashboard │
+                 └────────┬────────┘
+                          │
+                          ▼
+                 ┌─────────────────┐
+                 │   OpenSearch    │
+                 └────────┬────────┘
+                          │
+                          ▼
+                 ┌─────────────────┐
+                 │  Wazuh Manager  │
+                 │    (Ubuntu VM)  │
+                 │                 │
+                 │ • Rule Engine   │
+                 │ • Log Analysis  │
+                 │ • Alert Engine  │
+                 └────────┬────────┘
+                          ▲
+                    TCP 1514
+                          │
+                          │
+                 ┌────────┴────────┐
+                 │   Wazuh Agent   │
+                 │   (Windows 10)  │
+                 │                 │
+                 │ • Syscheck FIM  │
+                 │ • Event Logs    │
+                 └────────┬────────┘
+                          │
+                          ▼
+              📁 Monitored Folder
+         C:\Users\shree\Test
+                         
