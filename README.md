@@ -2,6 +2,9 @@
 ## 📐 Architecture Diagram
 
 ![Wazuh SIEM Home Lab Architecture](images/architecture.svg)
+## 📊 Dashboard
+
+![Dashboard](images/dashboard.png)
 ## 📌 Project Overview
 
 This project demonstrates the deployment of a Wazuh SIEM environment using an Ubuntu Server as the Wazuh Manager and a Windows 10 endpoint as the Wazuh Agent.
