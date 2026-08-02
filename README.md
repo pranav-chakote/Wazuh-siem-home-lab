@@ -53,7 +53,7 @@ The complete installation guide is available here:
 
 **Outcome:** Successfully detected and recorded file creation in real time.
 
-📷 **Screenshot:** `images/file-created.png`
+📷 **Screenshot:** ![File Created](images/file-created.png)
 
 ---
 
