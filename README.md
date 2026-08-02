@@ -122,4 +122,39 @@ Wazuh Dashboard
       ▼
 SOC Analyst
 ```
-                         
+   ---
+
+# 📂 Repository Structure
+
+```text
+Wazuh-siem-home-lab/
+│
+├── README.md
+├── LICENSE
+│
+├── configuration/
+│   └── Configuration files and documentation
+│
+├── docs/
+│   └── Project documentation
+│
+├── images/
+│   ├── architecture.svg
+│   └── Project screenshots
+│
+├── installation/
+│   └── Installation guides
+│
+└── scripts/
+    └── Helper scripts (future improvements)
+```
+
+## Folder Description
+
+| Folder | Description |
+|---------|-------------|
+| **configuration/** | Contains configuration-related documentation and important configuration files used in the project. |
+| **docs/** | Contains detailed project documentation and supporting guides. |
+| **images/** | Stores architecture diagrams, screenshots, and other visual assets used in the README. |
+| **installation/** | Contains step-by-step installation documentation for setting up the Wazuh SIEM Home Lab. |
+| **scripts/** | Reserved for automation scripts and helper utilities for future enhancements. |                      
