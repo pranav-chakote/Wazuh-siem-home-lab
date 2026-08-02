@@ -30,3 +30,20 @@ The lab demonstrates centralized log collection, endpoint monitoring, and File I
 - ✅ Endpoint registration and management
 - ✅ SIEM architecture using Ubuntu Server and Windows Agent
 - ✅ Real-time security monitoring through a web dashboard
+
+---
+
+## 🛠️ Technologies Used
+
+| Component | Technology |
+|-----------|------------|
+| SIEM Platform | Wazuh 4.12 |
+| Operating System | Ubuntu Server 24.04 LTS |
+| Endpoint | Windows 10 Pro |
+| Virtualization | Oracle VirtualBox |
+| Log Collection | Wazuh Agent |
+| File Integrity Monitoring | Syscheck |
+| Search Engine | OpenSearch |
+| Dashboard | Wazuh Dashboard |
+| Network | Bridged Adapter |
+| Protocol | TCP (Port 1514) |
