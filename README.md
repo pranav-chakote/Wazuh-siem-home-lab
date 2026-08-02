@@ -2,9 +2,7 @@
 ## 📐 Architecture Diagram
 
 ![Wazuh SIEM Home Lab Architecture](images/architecture.svg)
-## 📊 Dashboard
 
-![Dashboard](images/dashboard.png)
 ## 📌 Project Overview
 
 This project demonstrates the deployment of a Wazuh SIEM environment using an Ubuntu Server as the Wazuh Manager and a Windows 10 endpoint as the Wazuh Agent.
@@ -23,13 +21,24 @@ The lab demonstrates centralized log collection, endpoint monitoring, and File I
 - **Monitoring Module:** Syscheck (File Integrity Monitoring)
 - **Log Source:** Windows Event Logs
 - **Communication Protocol:** TCP (Port 1514)
+## ⚙️ Setup
 
-  ## ⚙️ Setup
-
-The complete installation and configuration guide is available here:
+The complete installation guide is available here:
 
 📄 **[SETUP.md](docs/SETUP.md)**
 
+### Quick Setup
+
+1. Install Ubuntu Server.
+2. Install the Wazuh Manager.
+3. Access the Wazuh Dashboard.
+4. Install the Windows Agent.
+5. Register the Agent.
+6. Configure File Integrity Monitoring.
+7. Verify alerts.
+## 📊 Dashboard
+
+![Dashboard](images/dashboard.png)
 ## 🚨 Detection Use Cases
 
 ### 1. File Creation Detection
