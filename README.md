@@ -134,7 +134,7 @@ The screenshots below demonstrate the deployment and validation of the Wazuh SIE
 |------------|-------------|
 | `images/architecture.svg` | Overall SIEM architecture |
 | `images/dashboard.png` | Wazuh Dashboard overview |
-| `images/agent-active.png` | Successfully registered Windows Agent |
+| `images/dashboard.png` | Successfully registered Windows Agent |
 | `images/file-created.png` | File creation detection alert |
 | `images/file-modified.png` | File modification detection alert |
 | `images/file-deleted.png` | File deletion detection alert |
