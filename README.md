@@ -1,7 +1,7 @@
 # 🛡️ Wazuh SIEM Home Lab with File Integrity Monitoring (FIM)
 ## 📐 Architecture Diagram
 
-![Wazuh SIEM Home Lab Architecture](images/wazuh_siem_architecture%20(1).svg)
+![Wazuh SIEM Home Lab Architecture](images/architecture%20(1).svg)
 ## 📌 Project Overview
 
 This project demonstrates the deployment of a Wazuh SIEM environment using an Ubuntu Server as the Wazuh Manager and a Windows 10 endpoint as the Wazuh Agent.
