@@ -96,4 +96,13 @@ The Windows endpoint sends logs and file integrity events to the Wazuh Manager o
                           ▼
               📁 Monitored Folder
                C:\Users\pranav\Test
+
+### Architecture Explanation
+
+- **Windows 10 Endpoint** – Runs the Wazuh Agent and collects Windows Event Logs and File Integrity Monitoring (Syscheck) events.
+- **TCP Port 1514** – Secure communication channel between the Wazuh Agent and Wazuh Manager.
+- **Wazuh Manager (Ubuntu VM)** – Receives logs, analyzes events, applies detection rules, and generates alerts.
+- **OpenSearch** – Stores indexed security events for fast searching.
+- **Wazuh Dashboard** – Displays alerts, dashboards, and agent status.
+- **SOC Analyst** – Monitors alerts and investigates security events.
                          
