@@ -50,6 +50,11 @@ The complete installation guide is available here:
 ![Dashboard](images/dashboard.png)
  
 ---
+### Windows Agent Successfully Connected
+
+![Windows Agent](images/agent-active.png)
+
+The Windows endpoint was successfully registered with the Wazuh Manager and is actively sending events to the SIEM platform.
  
 ## 🚨 Detection Use Cases
  
@@ -134,7 +139,7 @@ The screenshots below demonstrate the deployment and validation of the Wazuh SIE
 |------------|-------------|
 | `images/architecture.svg` | Overall SIEM architecture |
 | `images/dashboard.png` | Wazuh Dashboard overview |
-| `images/dashboard.png` | Successfully registered Windows Agent |
+| `images/agent-active.png` | Successfully registered Windows Agent |
 | `images/file-created.png` | File creation detection alert |
 | `images/file-modified.png` | File modification detection alert |
 | `images/file-deleted.png` | File deletion detection alert |
