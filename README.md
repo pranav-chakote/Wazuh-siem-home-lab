@@ -58,44 +58,7 @@ The Windows endpoint sends logs and file integrity events to the Wazuh Manager o
 
 ## 📐 Architecture Diagram
 
-                    👤 SOC Analyst
-                           │
-                    HTTPS (443)
-                           │
-                           ▼
-                 ┌─────────────────┐
-                 │ Wazuh Dashboard │
-                 └────────┬────────┘
-                          │
-                          ▼
-                 ┌─────────────────┐
-                 │   OpenSearch    │
-                 └────────┬────────┘
-                          │
-                          ▼
-                 ┌─────────────────┐
-                 │  Wazuh Manager  │
-                 │    (Ubuntu VM)  │
-                 │                 │
-                 │ • Rule Engine   │
-                 │ • Log Analysis  │
-                 │ • Alert Engine  │
-                 └────────┬────────┘
-                          ▲
-                    TCP 1514
-                          │
-                          │
-                 ┌────────┴────────┐
-                 │   Wazuh Agent   │
-                 │   (Windows 10)  │
-                 │                 │
-                 │ • Syscheck FIM  │
-                 │ • Event Logs    │
-                 └────────┬────────┘
-                          │
-                          ▼
-              📁 Monitored Folder
-               C:\Users\pranav\Test
+                
 
 ### Architecture Explanation
 
