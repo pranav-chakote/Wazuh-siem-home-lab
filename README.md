@@ -157,4 +157,61 @@ Wazuh-siem-home-lab/
 | **docs/** | Contains detailed project documentation and supporting guides. |
 | **images/** | Stores architecture diagrams, screenshots, and other visual assets used in the README. |
 | **installation/** | Contains step-by-step installation documentation for setting up the Wazuh SIEM Home Lab. |
-| **scripts/** | Reserved for automation scripts and helper utilities for future enhancements. |                      
+| **scripts/** | Reserved for automation scripts and helper utilities for future enhancements. |               
+
+---
+
+# 🖥️ Lab Environment
+
+This project was implemented using an Ubuntu Server virtual machine running the Wazuh Manager and a Windows 10 host machine running the Wazuh Agent. The environment was configured to demonstrate centralized log collection, File Integrity Monitoring (FIM), and real-time security event visualization.
+
+## Host Machine
+
+| Component | Details |
+|-----------|---------|
+| Operating System | Windows 10 |
+| Role | Wazuh Agent (Endpoint) |
+| Monitored Folder | `C:\Users\shree\Test` |
+
+---
+
+## Virtual Machine
+
+| Component | Details |
+|-----------|---------|
+| Virtualization Software | Oracle VirtualBox |
+| Guest Operating System | Ubuntu Server 24.04 LTS |
+| Role | Wazuh Manager |
+
+---
+
+## Wazuh Components
+
+| Component | Purpose |
+|-----------|---------|
+| Wazuh Agent | Collects Windows Event Logs and File Integrity Monitoring (FIM) events |
+| Wazuh Manager | Receives, analyzes, and correlates security events |
+| OpenSearch | Stores indexed security events |
+| Wazuh Dashboard | Visualizes alerts and agent information |
+
+---
+
+## Network Configuration
+
+| Setting | Value |
+|---------|-------|
+| Network Mode | Bridged Adapter |
+| Communication Protocol | TCP |
+| Agent Communication Port | 1514 |
+| Dashboard Access | HTTPS (Port 443) |
+
+---
+
+## File Integrity Monitoring Configuration
+
+| Setting | Value |
+|---------|-------|
+| Monitoring Module | Syscheck |
+| Monitoring Mode | Real-Time |
+| Monitored Directory | `C:\Users\shree\Test` |
+| Events Detected | File Creation, Modification, and Deletion |
