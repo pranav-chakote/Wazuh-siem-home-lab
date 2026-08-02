@@ -74,4 +74,52 @@ The Wazuh SIEM Home Lab consists of an Ubuntu Server running the Wazuh Manager a
 - **OpenSearch** – Stores indexed security events for fast searching.
 - **Wazuh Dashboard** – Displays alerts, dashboards, and agent status.
 - **SOC Analyst** – Monitors alerts and investigates security events.
+
+  ---
+
+# 🔄 Project Workflow
+
+The following workflow illustrates how Wazuh detects and processes file integrity monitoring events in this home lab.
+
+## Workflow
+
+1. A user creates, modifies, or deletes a file inside the monitored folder (`C:\Users\shree\Test`).
+2. The **Syscheck** module running on the Wazuh Agent detects the file system event in real time.
+3. The Wazuh Agent securely forwards the event to the Wazuh Manager using **TCP Port 1514**.
+4. The Wazuh Manager analyzes the received event using built-in detection rules.
+5. The analyzed event is indexed and stored in **OpenSearch**.
+6. The **Wazuh Dashboard** retrieves the indexed data and displays a security alert.
+7. The **SOC Analyst** reviews the alert and investigates the detected activity.
+
+### Workflow Summary
+
+```text
+User Action
+      │
+      ▼
+Monitored Folder
+      │
+      ▼
+Syscheck (FIM)
+      │
+      ▼
+Wazuh Agent
+      │
+ TCP Port 1514
+      │
+      ▼
+Wazuh Manager
+      │
+      ▼
+Rule Engine
+      │
+      ▼
+OpenSearch
+      │
+      ▼
+Wazuh Dashboard
+      │
+      ▼
+SOC Analyst
+```
                          
