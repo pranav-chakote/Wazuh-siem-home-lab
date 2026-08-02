@@ -47,3 +47,11 @@ The lab demonstrates centralized log collection, endpoint monitoring, and File I
 | Dashboard | Wazuh Dashboard |
 | Network | Bridged Adapter |
 | Protocol | TCP (Port 1514) |
+
+---
+
+# 🏗️ Project Architecture
+
+This project consists of one Ubuntu Server acting as the Wazuh Manager and one Windows 10 endpoint running the Wazuh Agent.
+
+The Windows endpoint sends logs and file integrity events to the Wazuh Manager over the local network. The manager analyzes the events, stores them in OpenSearch, and displays them through the Wazuh Dashboard.
