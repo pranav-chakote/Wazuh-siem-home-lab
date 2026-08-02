@@ -55,3 +55,52 @@ The lab demonstrates centralized log collection, endpoint monitoring, and File I
 This project consists of one Ubuntu Server acting as the Wazuh Manager and one Windows 10 endpoint running the Wazuh Agent.
 
 The Windows endpoint sends logs and file integrity events to the Wazuh Manager over the local network. The manager analyzes the events, stores them in OpenSearch, and displays them through the Wazuh Dashboard.
+
+## 📐 Architecture Diagram
+
+```text
+                          +----------------------------------+
+                          |        SOC Analyst/User          |
+                          |     Accesses Wazuh Dashboard     |
+                          +----------------+-----------------+
+                                           |
+                                      HTTPS (443)
+                                           |
+                                           ▼
++--------------------------------------------------------------------------------------+
+|                    Ubuntu Server (VirtualBox) - Wazuh Manager                        |
+|                                                                                      |
+|  +----------------+      +----------------+      +----------------+                   |
+|  | Wazuh Manager  | ---> |  Rule Engine   | ---> |   OpenSearch   |                  |
+|  | Log Collection |      | Alert Analysis |      | Event Storage  |                  |
+|  +----------------+      +----------------+      +----------------+                  |
+|                                           |                                          |
+|                                           ▼                                          |
+|                                 +--------------------+                               |
+|                                 |  Wazuh Dashboard   |                               |
+|                                 | Alert Visualization|                               |
+|                                 +--------------------+                               |
++--------------------------------------------------------------------------------------+
+                     ▲
+                     │ TCP 1514
+                     │
++--------------------------------------------------------------------------------------+
+|                      Windows 10 Endpoint (Host Machine)                              |
+|                                                                                      |
+|  +-------------------------+                                                         |
+|  |      Wazuh Agent        |                                                         |
+|  |-------------------------|                                                         |
+|  | • Windows Event Logs    |                                                         |
+|  | • Syscheck (FIM)        |                                                         |
+|  | • Log Collection        |                                                         |
+|  | • Event Forwarding      |                                                         |
+|  +------------+------------+                                                         |
+|               │                                                                      |
+|               ▼                                                                      |
+|  +-------------------------------+                                                   |
+|  | Monitored Folder              |                                                   |
+|  | C:\Users\shree\Test           |                                                   |
+|  +-------------------------------+                                                   |
++--------------------------------------------------------------------------------------+
+
+```
