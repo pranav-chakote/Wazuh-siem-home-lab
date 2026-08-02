@@ -69,7 +69,7 @@ The complete installation guide is available here:
 
 **Outcome:** Successfully detected and reported file modification.
 
-📷 **Screenshot:** `images/file-modified.png`
+📷 **Screenshot:** `![File Modified](images/file-modified.png)
 
 ---
 
@@ -85,7 +85,7 @@ The complete installation guide is available here:
 
 **Outcome:** Successfully detected file deletion in real time.
 
-📷 **Screenshot:** `images/file-deleted.png`
+📷 **Screenshot:** ![File Deleted](images/file-deleted.png)`
 ## 📚 Key Findings / What I Learned
 
 This project provided practical experience in deploying and managing a Security Information and Event Management (SIEM) solution using Wazuh.
